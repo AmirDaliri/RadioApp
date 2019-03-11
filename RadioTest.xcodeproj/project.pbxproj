@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		296056EF2236872000DAB2DA /* RadioStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296056EE2236872000DAB2DA /* RadioStation.swift */; };
+		296056F22236875500DAB2DA /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296056F12236875500DAB2DA /* Track.swift */; };
+		296056F722368DB900DAB2DA /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 296056F622368DB900DAB2DA /* stations.json */; };
+		296057192236995900DAB2DA /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296056FB2236995900DAB2DA /* DesignableImageView.swift */; };
+		2960571A2236995900DAB2DA /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296056FC2236995900DAB2DA /* KeyboardLayoutConstraint.swift */; };
+		2960571B2236995900DAB2DA /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296056FD2236995900DAB2DA /* TransitionManager.swift */; };
+		2960571C2236995900DAB2DA /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296056FE2236995900DAB2DA /* TransitionZoom.swift */; };
+		2960571D2236995900DAB2DA /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296056FF2236995900DAB2DA /* ImageLoader.swift */; };
+		2960571E2236995900DAB2DA /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057002236995900DAB2DA /* Spring.swift */; };
+		2960571F2236995900DAB2DA /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057012236995900DAB2DA /* SpringImageView.swift */; };
+		296057202236995900DAB2DA /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057022236995900DAB2DA /* DesignableLabel.swift */; };
+		296057212236995900DAB2DA /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057032236995900DAB2DA /* SoundPlayer.swift */; };
+		296057222236995900DAB2DA /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057042236995900DAB2DA /* BlurView.swift */; };
+		296057232236995900DAB2DA /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057052236995900DAB2DA /* DesignableTextField.swift */; };
+		296057242236995900DAB2DA /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057062236995900DAB2DA /* SpringButton.swift */; };
+		296057252236995900DAB2DA /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057072236995900DAB2DA /* SpringTextView.swift */; };
+		296057262236995900DAB2DA /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057082236995900DAB2DA /* Misc.swift */; };
+		296057272236995900DAB2DA /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057092236995900DAB2DA /* SpringView.swift */; };
+		296057282236995900DAB2DA /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960570A2236995900DAB2DA /* DesignableButton.swift */; };
+		296057292236995900DAB2DA /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960570B2236995900DAB2DA /* SpringTextField.swift */; };
+		2960572A2236995900DAB2DA /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960570C2236995900DAB2DA /* DesignableView.swift */; };
+		2960572B2236995900DAB2DA /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960570D2236995900DAB2DA /* DesignableTabBarController.swift */; };
+		2960572C2236995900DAB2DA /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960570E2236995900DAB2DA /* AsyncButton.swift */; };
+		2960572D2236995900DAB2DA /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2960570F2236995900DAB2DA /* LoadingView.xib */; };
+		2960572E2236995900DAB2DA /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057102236995900DAB2DA /* SpringLabel.swift */; };
+		2960572F2236995900DAB2DA /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057122236995900DAB2DA /* DesignableTextView.swift */; };
+		296057302236995900DAB2DA /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057132236995900DAB2DA /* AutoTextView.swift */; };
+		296057312236995900DAB2DA /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057142236995900DAB2DA /* SpringAnimation.swift */; };
+		296057322236995900DAB2DA /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057152236995900DAB2DA /* UnwindSegue.swift */; };
+		296057332236995900DAB2DA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057162236995900DAB2DA /* LoadingView.swift */; };
+		296057342236995900DAB2DA /* Infoo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 296057172236995900DAB2DA /* Infoo.plist */; };
+		296057352236995900DAB2DA /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057182236995900DAB2DA /* AsyncImageView.swift */; };
+		29605738223699FD00DAB2DA /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29605737223699FD00DAB2DA /* DataManager.swift */; };
+		2960573B22369A4000DAB2DA /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960573A22369A4000DAB2DA /* AppSetting.swift */; };
+		2960574022369A9300DAB2DA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960573D22369A9300DAB2DA /* Reachability.swift */; };
+		2960574122369A9300DAB2DA /* FRadioAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960573E22369A9300DAB2DA /* FRadioAPI.swift */; };
+		2960574222369A9300DAB2DA /* FRadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960573F22369A9300DAB2DA /* FRadioPlayer.swift */; };
+		2960574422369ABF00DAB2DA /* AnimationFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960574322369ABF00DAB2DA /* AnimationFrames.swift */; };
+		2960574622369ACD00DAB2DA /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960574522369ACD00DAB2DA /* UIImageView+Download.swift */; };
+		2960574822369AE000DAB2DA /* UIImage+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960574722369AE000DAB2DA /* UIImage+DropShadow.swift */; };
+		2960574C22369E9700DAB2DA /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960574B22369E9700DAB2DA /* RadioPlayer.swift */; };
+		2960574E2236A6DA00DAB2DA /* RadioListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960574D2236A6DA00DAB2DA /* RadioListCell.swift */; };
+		296057512236B1AF00DAB2DA /* RadioPlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057502236B1AF00DAB2DA /* RadioPlayVC.swift */; };
+		29FAEB92223683DC008375CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FAEB91223683DC008375CC /* AppDelegate.swift */; };
+		29FAEB94223683DC008375CC /* RadioListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FAEB93223683DC008375CC /* RadioListVC.swift */; };
+		29FAEB97223683DC008375CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29FAEB95223683DC008375CC /* Main.storyboard */; };
+		29FAEB99223683DE008375CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29FAEB98223683DE008375CC /* Assets.xcassets */; };
+		29FAEB9C223683DE008375CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29FAEB9A223683DE008375CC /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		296056EE2236872000DAB2DA /* RadioStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStation.swift; sourceTree = "<group>"; };
+		296056F12236875500DAB2DA /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		296056F622368DB900DAB2DA /* stations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
+		296056FB2236995900DAB2DA /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
+		296056FC2236995900DAB2DA /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		296056FD2236995900DAB2DA /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		296056FE2236995900DAB2DA /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
+		296056FF2236995900DAB2DA /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		296057002236995900DAB2DA /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		296057012236995900DAB2DA /* SpringImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringImageView.swift; sourceTree = "<group>"; };
+		296057022236995900DAB2DA /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
+		296057032236995900DAB2DA /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		296057042236995900DAB2DA /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		296057052236995900DAB2DA /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		296057062236995900DAB2DA /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
+		296057072236995900DAB2DA /* SpringTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextView.swift; sourceTree = "<group>"; };
+		296057082236995900DAB2DA /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		296057092236995900DAB2DA /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		2960570A2236995900DAB2DA /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		2960570B2236995900DAB2DA /* SpringTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextField.swift; sourceTree = "<group>"; };
+		2960570C2236995900DAB2DA /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		2960570D2236995900DAB2DA /* DesignableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTabBarController.swift; sourceTree = "<group>"; };
+		2960570E2236995900DAB2DA /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
+		2960570F2236995900DAB2DA /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		296057102236995900DAB2DA /* SpringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringLabel.swift; sourceTree = "<group>"; };
+		296057112236995900DAB2DA /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spring.h; sourceTree = "<group>"; };
+		296057122236995900DAB2DA /* DesignableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextView.swift; sourceTree = "<group>"; };
+		296057132236995900DAB2DA /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
+		296057142236995900DAB2DA /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		296057152236995900DAB2DA /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		296057162236995900DAB2DA /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		296057172236995900DAB2DA /* Infoo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Infoo.plist; sourceTree = "<group>"; };
+		296057182236995900DAB2DA /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		29605737223699FD00DAB2DA /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		2960573A22369A4000DAB2DA /* AppSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetting.swift; sourceTree = "<group>"; };
+		2960573D22369A9300DAB2DA /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		2960573E22369A9300DAB2DA /* FRadioAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioAPI.swift; sourceTree = "<group>"; };
+		2960573F22369A9300DAB2DA /* FRadioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioPlayer.swift; sourceTree = "<group>"; };
+		2960574322369ABF00DAB2DA /* AnimationFrames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFrames.swift; sourceTree = "<group>"; };
+		2960574522369ACD00DAB2DA /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
+		2960574722369AE000DAB2DA /* UIImage+DropShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+DropShadow.swift"; sourceTree = "<group>"; };
+		2960574B22369E9700DAB2DA /* RadioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayer.swift; sourceTree = "<group>"; };
+		2960574D2236A6DA00DAB2DA /* RadioListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioListCell.swift; sourceTree = "<group>"; };
+		296057502236B1AF00DAB2DA /* RadioPlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayVC.swift; sourceTree = "<group>"; };
+		29FAEB8E223683DC008375CC /* RadioTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29FAEB91223683DC008375CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		29FAEB93223683DC008375CC /* RadioListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioListVC.swift; sourceTree = "<group>"; };
+		29FAEB96223683DC008375CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		29FAEB98223683DE008375CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		29FAEB9B223683DE008375CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		29FAEB9D223683DE008375CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29FAEB8B223683DC008375CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		296056F02236872400DAB2DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				296056EE2236872000DAB2DA /* RadioStation.swift */,
+				296056F12236875500DAB2DA /* Track.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		296056F32236881200DAB2DA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				29FAEB93223683DC008375CC /* RadioListVC.swift */,
+				296057502236B1AF00DAB2DA /* RadioPlayVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		296056F422368CD700DAB2DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				29FAEB95223683DC008375CC /* Main.storyboard */,
+				29FAEB9A223683DE008375CC /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		296056F522368CE200DAB2DA /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				2960573A22369A4000DAB2DA /* AppSetting.swift */,
+				29FAEB98223683DE008375CC /* Assets.xcassets */,
+				29FAEB9D223683DE008375CC /* Info.plist */,
+				296056F622368DB900DAB2DA /* stations.json */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		296056FA2236995900DAB2DA /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				296056FB2236995900DAB2DA /* DesignableImageView.swift */,
+				296056FC2236995900DAB2DA /* KeyboardLayoutConstraint.swift */,
+				296056FD2236995900DAB2DA /* TransitionManager.swift */,
+				296056FE2236995900DAB2DA /* TransitionZoom.swift */,
+				296056FF2236995900DAB2DA /* ImageLoader.swift */,
+				296057002236995900DAB2DA /* Spring.swift */,
+				296057012236995900DAB2DA /* SpringImageView.swift */,
+				296057022236995900DAB2DA /* DesignableLabel.swift */,
+				296057032236995900DAB2DA /* SoundPlayer.swift */,
+				296057042236995900DAB2DA /* BlurView.swift */,
+				296057052236995900DAB2DA /* DesignableTextField.swift */,
+				296057062236995900DAB2DA /* SpringButton.swift */,
+				296057072236995900DAB2DA /* SpringTextView.swift */,
+				296057082236995900DAB2DA /* Misc.swift */,
+				296057092236995900DAB2DA /* SpringView.swift */,
+				2960570A2236995900DAB2DA /* DesignableButton.swift */,
+				2960570B2236995900DAB2DA /* SpringTextField.swift */,
+				2960570C2236995900DAB2DA /* DesignableView.swift */,
+				2960570D2236995900DAB2DA /* DesignableTabBarController.swift */,
+				2960570E2236995900DAB2DA /* AsyncButton.swift */,
+				2960570F2236995900DAB2DA /* LoadingView.xib */,
+				296057102236995900DAB2DA /* SpringLabel.swift */,
+				296057112236995900DAB2DA /* Spring.h */,
+				296057122236995900DAB2DA /* DesignableTextView.swift */,
+				296057132236995900DAB2DA /* AutoTextView.swift */,
+				296057142236995900DAB2DA /* SpringAnimation.swift */,
+				296057152236995900DAB2DA /* UnwindSegue.swift */,
+				296057162236995900DAB2DA /* LoadingView.swift */,
+				296057172236995900DAB2DA /* Infoo.plist */,
+				296057182236995900DAB2DA /* AsyncImageView.swift */,
+			);
+			path = Spring;
+			sourceTree = "<group>";
+		};
+		296057362236996900DAB2DA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2960573C22369A9300DAB2DA /* FRadioPlayer */,
+				296056FA2236995900DAB2DA /* Spring */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2960573922369A0200DAB2DA /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				29605737223699FD00DAB2DA /* DataManager.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		2960573C22369A9300DAB2DA /* FRadioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				2960573D22369A9300DAB2DA /* Reachability.swift */,
+				2960573E22369A9300DAB2DA /* FRadioAPI.swift */,
+				2960573F22369A9300DAB2DA /* FRadioPlayer.swift */,
+			);
+			path = FRadioPlayer;
+			sourceTree = "<group>";
+		};
+		2960574922369C8300DAB2DA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2960574B22369E9700DAB2DA /* RadioPlayer.swift */,
+				2960574A22369E8500DAB2DA /* UI-Helper */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2960574A22369E8500DAB2DA /* UI-Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2960574322369ABF00DAB2DA /* AnimationFrames.swift */,
+				2960574522369ACD00DAB2DA /* UIImageView+Download.swift */,
+				2960574722369AE000DAB2DA /* UIImage+DropShadow.swift */,
+			);
+			path = "UI-Helper";
+			sourceTree = "<group>";
+		};
+		2960574F2236A6E000DAB2DA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2960574D2236A6DA00DAB2DA /* RadioListCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		29FAEB85223683DC008375CC = {
+			isa = PBXGroup;
+			children = (
+				29FAEB90223683DC008375CC /* RadioTest */,
+				29FAEB8F223683DC008375CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		29FAEB8F223683DC008375CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29FAEB8E223683DC008375CC /* RadioTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29FAEB90223683DC008375CC /* RadioTest */ = {
+			isa = PBXGroup;
+			children = (
+				29FAEB91223683DC008375CC /* AppDelegate.swift */,
+				2960573922369A0200DAB2DA /* Requests */,
+				296056F02236872400DAB2DA /* Model */,
+				296056F32236881200DAB2DA /* Controllers */,
+				2960574F2236A6E000DAB2DA /* Cell */,
+				296056F422368CD700DAB2DA /* View */,
+				2960574922369C8300DAB2DA /* Helpers */,
+				296056F522368CE200DAB2DA /* Supporting */,
+				296057362236996900DAB2DA /* Resources */,
+			);
+			path = RadioTest;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		29FAEB8D223683DC008375CC /* RadioTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29FAEBA0223683DE008375CC /* Build configuration list for PBXNativeTarget "RadioTest" */;
+			buildPhases = (
+				29FAEB8A223683DC008375CC /* Sources */,
+				29FAEB8B223683DC008375CC /* Frameworks */,
+				29FAEB8C223683DC008375CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RadioTest;
+			productName = RadioTest;
+			productReference = 29FAEB8E223683DC008375CC /* RadioTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29FAEB86223683DC008375CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = AmirDaliri;
+				TargetAttributes = {
+					29FAEB8D223683DC008375CC = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 29FAEB89223683DC008375CC /* Build configuration list for PBXProject "RadioTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 29FAEB85223683DC008375CC;
+			productRefGroup = 29FAEB8F223683DC008375CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29FAEB8D223683DC008375CC /* RadioTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		29FAEB8C223683DC008375CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29FAEB9C223683DE008375CC /* LaunchScreen.storyboard in Resources */,
+				29FAEB99223683DE008375CC /* Assets.xcassets in Resources */,
+				296057342236995900DAB2DA /* Infoo.plist in Resources */,
+				296056F722368DB900DAB2DA /* stations.json in Resources */,
+				29FAEB97223683DC008375CC /* Main.storyboard in Resources */,
+				2960572D2236995900DAB2DA /* LoadingView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29FAEB8A223683DC008375CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				296057252236995900DAB2DA /* SpringTextView.swift in Sources */,
+				2960574122369A9300DAB2DA /* FRadioAPI.swift in Sources */,
+				29605738223699FD00DAB2DA /* DataManager.swift in Sources */,
+				296057272236995900DAB2DA /* SpringView.swift in Sources */,
+				2960574822369AE000DAB2DA /* UIImage+DropShadow.swift in Sources */,
+				296057212236995900DAB2DA /* SoundPlayer.swift in Sources */,
+				296057282236995900DAB2DA /* DesignableButton.swift in Sources */,
+				296057222236995900DAB2DA /* BlurView.swift in Sources */,
+				2960574022369A9300DAB2DA /* Reachability.swift in Sources */,
+				2960572E2236995900DAB2DA /* SpringLabel.swift in Sources */,
+				296057262236995900DAB2DA /* Misc.swift in Sources */,
+				296057292236995900DAB2DA /* SpringTextField.swift in Sources */,
+				2960574E2236A6DA00DAB2DA /* RadioListCell.swift in Sources */,
+				29FAEB94223683DC008375CC /* RadioListVC.swift in Sources */,
+				296057192236995900DAB2DA /* DesignableImageView.swift in Sources */,
+				2960573B22369A4000DAB2DA /* AppSetting.swift in Sources */,
+				2960571B2236995900DAB2DA /* TransitionManager.swift in Sources */,
+				296057312236995900DAB2DA /* SpringAnimation.swift in Sources */,
+				2960571F2236995900DAB2DA /* SpringImageView.swift in Sources */,
+				29FAEB92223683DC008375CC /* AppDelegate.swift in Sources */,
+				296057232236995900DAB2DA /* DesignableTextField.swift in Sources */,
+				296056EF2236872000DAB2DA /* RadioStation.swift in Sources */,
+				2960572C2236995900DAB2DA /* AsyncButton.swift in Sources */,
+				2960572A2236995900DAB2DA /* DesignableView.swift in Sources */,
+				2960572B2236995900DAB2DA /* DesignableTabBarController.swift in Sources */,
+				2960574C22369E9700DAB2DA /* RadioPlayer.swift in Sources */,
+				2960571D2236995900DAB2DA /* ImageLoader.swift in Sources */,
+				2960571E2236995900DAB2DA /* Spring.swift in Sources */,
+				296056F22236875500DAB2DA /* Track.swift in Sources */,
+				296057302236995900DAB2DA /* AutoTextView.swift in Sources */,
+				2960574222369A9300DAB2DA /* FRadioPlayer.swift in Sources */,
+				296057332236995900DAB2DA /* LoadingView.swift in Sources */,
+				296057242236995900DAB2DA /* SpringButton.swift in Sources */,
+				296057322236995900DAB2DA /* UnwindSegue.swift in Sources */,
+				2960571A2236995900DAB2DA /* KeyboardLayoutConstraint.swift in Sources */,
+				2960574622369ACD00DAB2DA /* UIImageView+Download.swift in Sources */,
+				2960572F2236995900DAB2DA /* DesignableTextView.swift in Sources */,
+				296057352236995900DAB2DA /* AsyncImageView.swift in Sources */,
+				296057202236995900DAB2DA /* DesignableLabel.swift in Sources */,
+				2960571C2236995900DAB2DA /* TransitionZoom.swift in Sources */,
+				296057512236B1AF00DAB2DA /* RadioPlayVC.swift in Sources */,
+				2960574422369ABF00DAB2DA /* AnimationFrames.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		29FAEB95223683DC008375CC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29FAEB96223683DC008375CC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		29FAEB9A223683DE008375CC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29FAEB9B223683DE008375CC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		29FAEB9E223683DE008375CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		29FAEB9F223683DE008375CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		29FAEBA1223683DE008375CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NCU4JG2P77;
+				INFOPLIST_FILE = "$(SRCROOT)/RadioTest/Supporting/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AmirDaliri.RadioTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29FAEBA2223683DE008375CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NCU4JG2P77;
+				INFOPLIST_FILE = "$(SRCROOT)/RadioTest/Supporting/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AmirDaliri.RadioTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29FAEB89223683DC008375CC /* Build configuration list for PBXProject "RadioTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29FAEB9E223683DE008375CC /* Debug */,
+				29FAEB9F223683DE008375CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29FAEBA0223683DE008375CC /* Build configuration list for PBXNativeTarget "RadioTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29FAEBA1223683DE008375CC /* Debug */,
+				29FAEBA2223683DE008375CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29FAEB86223683DC008375CC /* Project object */;
+}
