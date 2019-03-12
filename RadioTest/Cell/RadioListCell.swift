@@ -24,17 +24,18 @@ class RadioListCell: UITableViewCell {
         selectedBackgroundView  = selectedView
     }
 
-    func configureStationCell(station: RadioStation) {
+    func configureStationCell(station: RadioList) {
         
         nameLabel.text = station.name
         descLabel.text = station.desc
         
         let imageURL = station.imageURL as NSString
-        
+        print(imageURL)
         if imageURL.contains("http") {
             
             if let url = URL(string: station.imageURL) {
                 avatarImageView.loadImageWithURL(url: url) { (image) in
+                    print(image, url)
                     // station image loaded
                 }
             }
@@ -43,7 +44,7 @@ class RadioListCell: UITableViewCell {
             avatarImageView.image = UIImage(named: imageURL as String)
             
         } else {
-            avatarImageView.image = UIImage(named: "stationImage")
+            avatarImageView.image = UIImage(named: "ic-radioLogo")
         }
         
         avatarImageView.applyShadow()

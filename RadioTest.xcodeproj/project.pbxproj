@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		296056EF2236872000DAB2DA /* RadioStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296056EE2236872000DAB2DA /* RadioStation.swift */; };
+		2957542722383A38009B1E69 /* MIBlurPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957542622383A38009B1E69 /* MIBlurPopup.swift */; };
+		2957542A22383AE7009B1E69 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957542922383AE7009B1E69 /* InfoVC.swift */; };
+		296056EF2236872000DAB2DA /* RadioList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296056EE2236872000DAB2DA /* RadioList.swift */; };
 		296056F22236875500DAB2DA /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296056F12236875500DAB2DA /* Track.swift */; };
 		296056F722368DB900DAB2DA /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 296056F622368DB900DAB2DA /* stations.json */; };
 		296057192236995900DAB2DA /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296056FB2236995900DAB2DA /* DesignableImageView.swift */; };
@@ -58,7 +60,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		296056EE2236872000DAB2DA /* RadioStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStation.swift; sourceTree = "<group>"; };
+		2957542622383A38009B1E69 /* MIBlurPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIBlurPopup.swift; sourceTree = "<group>"; };
+		2957542922383AE7009B1E69 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		296056EE2236872000DAB2DA /* RadioList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioList.swift; sourceTree = "<group>"; };
 		296056F12236875500DAB2DA /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		296056F622368DB900DAB2DA /* stations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
 		296056FB2236995900DAB2DA /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
@@ -122,10 +126,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2957542822383A6F009B1E69 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				2957542622383A38009B1E69 /* MIBlurPopup.swift */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
 		296056F02236872400DAB2DA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				296056EE2236872000DAB2DA /* RadioStation.swift */,
+				296056EE2236872000DAB2DA /* RadioList.swift */,
 				296056F12236875500DAB2DA /* Track.swift */,
 			);
 			path = Model;
@@ -136,6 +148,7 @@
 			children = (
 				29FAEB93223683DC008375CC /* RadioListVC.swift */,
 				296057502236B1AF00DAB2DA /* RadioPlayVC.swift */,
+				2957542922383AE7009B1E69 /* InfoVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -200,6 +213,7 @@
 		296057362236996900DAB2DA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2957542822383A6F009B1E69 /* Popup */,
 				2960573C22369A9300DAB2DA /* FRadioPlayer */,
 				296056FA2236995900DAB2DA /* Spring */,
 			);
@@ -361,6 +375,7 @@
 				2960574122369A9300DAB2DA /* FRadioAPI.swift in Sources */,
 				29605738223699FD00DAB2DA /* DataManager.swift in Sources */,
 				296057272236995900DAB2DA /* SpringView.swift in Sources */,
+				2957542A22383AE7009B1E69 /* InfoVC.swift in Sources */,
 				2960574822369AE000DAB2DA /* UIImage+DropShadow.swift in Sources */,
 				296057212236995900DAB2DA /* SoundPlayer.swift in Sources */,
 				296057282236995900DAB2DA /* DesignableButton.swift in Sources */,
@@ -375,10 +390,11 @@
 				2960573B22369A4000DAB2DA /* AppSetting.swift in Sources */,
 				2960571B2236995900DAB2DA /* TransitionManager.swift in Sources */,
 				296057312236995900DAB2DA /* SpringAnimation.swift in Sources */,
+				2957542722383A38009B1E69 /* MIBlurPopup.swift in Sources */,
 				2960571F2236995900DAB2DA /* SpringImageView.swift in Sources */,
 				29FAEB92223683DC008375CC /* AppDelegate.swift in Sources */,
 				296057232236995900DAB2DA /* DesignableTextField.swift in Sources */,
-				296056EF2236872000DAB2DA /* RadioStation.swift in Sources */,
+				296056EF2236872000DAB2DA /* RadioList.swift in Sources */,
 				2960572C2236995900DAB2DA /* AsyncButton.swift in Sources */,
 				2960572A2236995900DAB2DA /* DesignableView.swift in Sources */,
 				2960572B2236995900DAB2DA /* DesignableTabBarController.swift in Sources */,

@@ -29,7 +29,7 @@ class RadioPlayer {
     
     let player = FRadioPlayer.shared
     
-    var station: RadioStation? {
+    var station: RadioList? {
         didSet { resetTrack(with: station) }
     }
     
@@ -69,14 +69,14 @@ class RadioPlayer {
     }
     
     // Reset the track metadata and artwork to use the current station infos
-    func resetTrack(with station: RadioStation?) {
+    func resetTrack(with station: RadioList?) {
         guard let station = station else { track = nil; return }
         updateTrackMetadata(artistName: station.desc, trackName: station.name)
         resetArtwork(with: station)
     }
     
     // Reset the track Artwork to current station image
-    func resetArtwork(with station: RadioStation?) {
+    func resetArtwork(with station: RadioList?) {
         guard let station = station else { track = nil; return }
         getStationImage(from: station) { image in
             self.updateTrackArtwork(with: image, artworkLoaded: false)
@@ -87,7 +87,7 @@ class RadioPlayer {
     // MARK: - Private helpers
     //*****************************************************************
     
-    private func getStationImage(from station: RadioStation, completionHandler: @escaping (_ image: UIImage) -> ()) {
+    private func getStationImage(from station: RadioList, completionHandler: @escaping (_ image: UIImage) -> ()) {
         
         if station.imageURL.range(of: "http") != nil {
             // load current station image from network
