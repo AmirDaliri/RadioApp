@@ -21,7 +21,6 @@ class RadioListVC: UIViewController {
 
     let radioPlayer = RadioPlayer()
 
-    
     // MARK: - List
     
     var stations = [RadioList]() {
@@ -47,7 +46,6 @@ class RadioListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nowPlayingAnimationImageView.startAnimating()
 
         // I'm Here...
         self.tableView.tableFooterView = UIView()
@@ -70,6 +68,8 @@ class RadioListVC: UIViewController {
         createNowPlayingAnimation()
         
         // Activate audioSession
+
+
         do {
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
@@ -90,15 +90,33 @@ class RadioListVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: nil)
         
-        guard let infoVC = segue.destination as? InfoVC else { return }
-        infoVC.customBlurEffectStyle = .dark
-//        popupViewController.customBlurEffectStyle = .extraLight
-//        popupViewController.customBlurEffectStyle = .light
-
-
+        if segue.identifier == "showRadioPlayVC" {
+            let radioPlayVC: RadioPlayVC = segue.destination as! RadioPlayVC
+            title = ""
+            
+            let newStation: Bool
+            
+            if let indexPath = (sender as? IndexPath) {
+                // User clicked on row, load/reset station
+                radioPlayer.station = searchController.isActive ? searchedStations[indexPath.row] : stations[indexPath.row]
+                newStation = true
+            } else {
+                // User clicked on Now Playing button
+                newStation = false
+            }
+            
+            self.radioPlayVC = radioPlayVC
+            radioPlayVC.load(station: radioPlayer.station, track: radioPlayer.track, isNewStation: newStation)
+            radioPlayVC.delegate = self
+            
+        } else {
+            
+            guard let infoVC = segue.destination as? InfoVC else { return }
+            infoVC.customBlurEffectStyle = .dark
+            infoVC.customAnimationDuration = TimeInterval(0.5)
+            infoVC.customInitialScaleAmmount = CGFloat(Double(0.7)) // https://www.youtube.com/watch?v=TH_JRjJtNSw
         
-        infoVC.customAnimationDuration = TimeInterval(0.5)
-        infoVC.customInitialScaleAmmount = CGFloat(Double(0.7)) // https://www.youtube.com/watch?v=TH_JRjJtNSw
+        }
     }
 
     // MARK: - List Methode
@@ -137,6 +155,15 @@ class RadioListVC: UIViewController {
         createNowPlayingBarButton()
     }
     
+    func startNowPlayingAnimation(_ animate: Bool) {
+        animate ? nowPlayingAnimationImageView.startAnimating() : nowPlayingAnimationImageView.stopAnimating()
+    }
+    
+    private func getIndex(of station: RadioList?) -> Int? {
+        guard let station = station, let index = stations.index(of: station) else { return nil }
+        return index
+    }
+    
     // MARK: - Setup UI Methode
     func setupPullToRefresh() {
         
@@ -162,11 +189,11 @@ class RadioListVC: UIViewController {
     // MARK: - Action Methode
     
     @objc func nowPlayingBarButtonPressed() {
-        performSegue(withIdentifier: "NowPlaying", sender: self)
+        performSegue(withIdentifier: "showRadioPlayVC", sender: self)
     }
     
     @IBAction func nowPlayingPressed(_ sender: UIButton) {
-//        performSegue(withIdentifier: "NowPlaying", sender: self)
+        performSegue(withIdentifier: "showRadioPlayVC", sender: self)
         nowPlayingAnimationImageView.startAnimating()
     }
     
@@ -234,6 +261,30 @@ class RadioListVC: UIViewController {
         }
     }
 
+    // MARK: - MPNowPlayingInfoCenter (Lock screen)
+    
+    func updateLockScreen(with track: Track?) {
+        
+        // Define Now Playing Info
+        var nowPlayingInfo = [String : Any]()
+        
+        if let image = track?.artworkImage {
+            nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: image.size, requestHandler: { size -> UIImage in
+                return image
+            })
+        }
+        
+        if let artist = track?.artist {
+            nowPlayingInfo[MPMediaItemPropertyArtist] = artist
+        }
+        
+        if let title = track?.title {
+            nowPlayingInfo[MPMediaItemPropertyTitle] = title
+        }
+        
+        // Set the metadata
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    }
 
 }
 
@@ -270,6 +321,11 @@ extension RadioListVC {
 }
 
 extension RadioListVC: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive {
             return searchedStations.count
@@ -280,6 +336,7 @@ extension RadioListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "radioListCell", for: indexPath) as! RadioListCell
+        cell.backgroundColor = (indexPath.row % 2 == 0) ? UIColor.clear : UIColor.black.withAlphaComponent(0.2)
         let station = searchController.isActive ? searchedStations[indexPath.row] : stations[indexPath.row]
         cell.configureStationCell(station: station)
 
@@ -287,9 +344,11 @@ extension RadioListVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showRadioPlayVC", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "showRadioPlayVC", sender: indexPath)
     }
     
+    @objc(tableView:heightForRowAtIndexPath:)
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110.0
     }
@@ -340,23 +399,59 @@ extension RadioListVC: UISearchResultsUpdating {
 extension RadioListVC: RadioPlayerDelegate {
     
     func playerStateDidChange(_ playerState: FRadioPlayerState) {
-//        nowPlayingViewController?.playerStateDidChange(playerState, animate: true)
+        radioPlayVC?.playerStateDidChange(playerState, animate: true)
     }
     
     func playbackStateDidChange(_ playbackState: FRadioPlaybackState) {
-//        nowPlayingViewController?.playbackStateDidChange(playbackState, animate: true)
-//        startNowPlayingAnimation(radioPlayer.player.isPlaying)
+        radioPlayVC?.playbackStateDidChange(playbackState, animate: true)
+        startNowPlayingAnimation(radioPlayer.player.isPlaying)
     }
     
     func trackDidUpdate(_ track: Track?) {
-//        updateLockScreen(with: track)
+        updateLockScreen(with: track)
         updateNowPlayingButton(station: radioPlayer.station, track: track)
-//        updateHandoffUserActivity(userActivity, station: radioPlayer.station, track: track)
-//        nowPlayingViewController?.updateTrackMetadata(with: track)
+        updateHandoffUserActivity(userActivity, station: radioPlayer.station, track: track)
+        radioPlayVC?.updateTrackMetadata(with: track)
     }
     
     func trackArtworkDidUpdate(_ track: Track?) {
-//        updateLockScreen(with: track)
-//        nowPlayingViewController?.updateTrackArtwork(with: track)
+        updateLockScreen(with: track)
+        radioPlayVC?.updateTrackArtwork(with: track)
+    }
+}
+
+// MARK: - NowPlayingViewControllerDelegate
+
+extension RadioListVC: NowPlayingViewControllerDelegate {
+    
+    func didPressPlayingButton() {
+        radioPlayer.player.togglePlaying()
+    }
+    
+    func didPressStopButton() {
+        radioPlayer.player.stop()
+    }
+    
+    func didPressNextButton() {
+        guard let index = getIndex(of: radioPlayer.station) else { return }
+        radioPlayer.station = (index + 1 == stations.count) ? stations[0] : stations[index + 1]
+        handleRemoteStationChange()
+    }
+    
+    func didPressPreviousButton() {
+        guard let index = getIndex(of: radioPlayer.station) else { return }
+        radioPlayer.station = (index == 0) ? stations.last : stations[index - 1]
+        handleRemoteStationChange()
+    }
+    
+    func handleRemoteStationChange() {
+        if let nowPlayingVC = radioPlayVC {
+            // If nowPlayingVC is presented
+            nowPlayingVC.load(station: radioPlayer.station, track: radioPlayer.track)
+            nowPlayingVC.stationDidChange()
+        } else if let station = radioPlayer.station {
+            // If nowPlayingVC is not presented (change from remote controls)
+            radioPlayer.player.radioURL = URL(string: station.streamURL)
+        }
     }
 }
