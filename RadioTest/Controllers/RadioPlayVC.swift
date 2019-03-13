@@ -48,33 +48,25 @@ class RadioPlayVC: UIViewController {
         
         // I'm Here...
         
-        // Create Now Playing BarItem
         createNowPlayingAnimation()
-        
-        // Set AlbumArtwork Constraints
         optimizeForDeviceSize()
         
-        // Set View Title
         self.title = currentRadio.name
         
-        // Set UI
         albumImageView.image = currentTrack.artworkImage
         stationDescLabel.text = currentRadio.desc
         stationDescLabel.isHidden = currentTrack.artworkLoaded
         
-        // Check for station change
         newStation ? stationDidChange() : playerStateDidChange(radioPlayer.state, animate: false)
         
-        // Setup volumeSlider
         setupVolumeSlider()
     }
     
 
     // MARK: - Setup Methode
-
+    // only works in devices, not the simulator.
+    
     func setupVolumeSlider() {
-        // Note: This slider implementation uses a MPVolumeView
-        // The volume slider only works in devices, not the simulator.
         for subview in MPVolumeView().subviews {
             guard let volumeSlider = subview as? UISlider else { continue }
             mpVolumeSlider = volumeSlider
@@ -144,18 +136,16 @@ class RadioPlayVC: UIViewController {
         updateLabels()
     }
     
-    // Update track with new artwork
+
     func updateTrackArtwork(with track: Track?) {
         guard let track = track else { return }
         
-        // Update track struct
         currentTrack.artworkImage = track.artworkImage
         currentTrack.artworkLoaded = track.artworkLoaded
         
         albumImageView.image = currentTrack.artworkImage
         
         if track.artworkLoaded {
-            // Animate artwork
             albumImageView.animation = "wobble"
             albumImageView.duration = 2
             albumImageView.animate()
@@ -164,7 +154,6 @@ class RadioPlayVC: UIViewController {
             stationDescLabel.isHidden = false
         }
         
-        // Force app to update display
         view.setNeedsDisplay()
     }
     
@@ -217,7 +206,6 @@ class RadioPlayVC: UIViewController {
     
     func optimizeForDeviceSize() {
         
-        // Adjust album size to fit iPhone 4s, 6s & 6s+
         let deviceHeight = self.view.bounds.height
         
         if deviceHeight == 480 {
@@ -235,16 +223,13 @@ class RadioPlayVC: UIViewController {
     func updateLabels(with statusMessage: String? = nil, animate: Bool = true) {
         
         guard let statusMessage = statusMessage else {
-            // Radio is (hopefully) streaming properly
             songLabel.text = currentTrack.title
             artistLabel.text = currentTrack.artist
             shouldAnimateSongLabel(animate)
             return
         }
         
-        // There's a an interruption or pause in the audio queue
-        
-        // Update UI only when it's not aleary updated
+
         guard songLabel.text != statusMessage else { return }
         
         songLabel.text = statusMessage
@@ -260,10 +245,9 @@ class RadioPlayVC: UIViewController {
     // MARK: - Animation Methode
     
     func shouldAnimateSongLabel(_ animate: Bool) {
-        // Animate if the Track has album metadata
+        
         guard animate, currentTrack.title != currentRadio.name else { return }
         
-        // songLabel animation
         songLabel.animation = "zoomIn"
         songLabel.duration = 1.5
         songLabel.damping = 1
@@ -272,16 +256,12 @@ class RadioPlayVC: UIViewController {
     
     func createNowPlayingAnimation() {
         
-        // Setup ImageView
         nowPlayingImageView = UIImageView(image: UIImage(named: "NowPlayingBars-3"))
         nowPlayingImageView.autoresizingMask = []
         nowPlayingImageView.contentMode = UIView.ContentMode.center
-        
-        // Create Animation
         nowPlayingImageView.animationImages = AnimationFrames.createFrames()
         nowPlayingImageView.animationDuration = 0.7
         
-        // Create Top BarButton
         let barButton = UIButton(type: .custom)
         barButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         barButton.addSubview(nowPlayingImageView)

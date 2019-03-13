@@ -8,10 +8,6 @@
 
 import UIKit
 
-//*****************************************************************
-// RadioPlayerDelegate: Sends FRadioPlayer and Station/Track events
-//*****************************************************************
-
 protocol RadioPlayerDelegate: class {
     func playerStateDidChange(_ playerState: FRadioPlayerState)
     func playbackStateDidChange(_ playbackState: FRadioPlaybackState)
@@ -19,11 +15,8 @@ protocol RadioPlayerDelegate: class {
     func trackArtworkDidUpdate(_ track: Track?)
 }
 
-//*****************************************************************
-// RadioPlayer: App Radio Player
-//*****************************************************************
 
-class RadioPlayer {
+class RadioStreamer {
     
     weak var delegate: RadioPlayerDelegate?
     
@@ -44,12 +37,8 @@ class RadioPlayer {
         track = nil
         player.radioURL = nil
     }
+
     
-    //*****************************************************************
-    // MARK: - Track loading/updates
-    //*****************************************************************
-    
-    // Update the track with an artist name and track name
     func updateTrackMetadata(artistName: String, trackName: String) {
         if track == nil {
             track = Track(title: trackName, artist: artistName)
@@ -61,14 +50,14 @@ class RadioPlayer {
         delegate?.trackDidUpdate(track)
     }
     
-    // Update the track artwork with a UIImage
+
     func updateTrackArtwork(with image: UIImage, artworkLoaded: Bool) {
         track?.artworkImage = image
         track?.artworkLoaded = artworkLoaded
         delegate?.trackArtworkDidUpdate(track)
     }
     
-    // Reset the track metadata and artwork to use the current station infos
+
     func resetTrack(with station: RadioList?) {
         guard let station = station else { track = nil; return }
         updateTrackMetadata(artistName: station.desc, trackName: station.name)
@@ -83,26 +72,21 @@ class RadioPlayer {
         }
     }
     
-    //*****************************************************************
-    // MARK: - Private helpers
-    //*****************************************************************
     
     private func getStationImage(from station: RadioList, completionHandler: @escaping (_ image: UIImage) -> ()) {
         
         if station.imageURL.range(of: "http") != nil {
-            // load current station image from network
             ImageLoader.sharedLoader.imageForUrl(urlString: station.imageURL) { (image, stringURL) in
                 completionHandler(image ?? #imageLiteral(resourceName: "albumArt"))
             }
         } else {
-            // load local station image
             let image = UIImage(named: station.imageURL) ?? #imageLiteral(resourceName: "albumArt")
             completionHandler(image)
         }
     }
 }
 
-extension RadioPlayer: FRadioPlayerDelegate {
+extension RadioStreamer: FRadioPlayerDelegate {
     
     func radioPlayer(_ player: FRadioPlayer, playerStateDidChange state: FRadioPlayerState) {
         delegate?.playerStateDidChange(state)

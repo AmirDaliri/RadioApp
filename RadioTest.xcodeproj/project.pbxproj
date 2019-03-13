@@ -49,7 +49,7 @@
 		2960574422369ABF00DAB2DA /* AnimationFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960574322369ABF00DAB2DA /* AnimationFrames.swift */; };
 		2960574622369ACD00DAB2DA /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960574522369ACD00DAB2DA /* UIImageView+Download.swift */; };
 		2960574822369AE000DAB2DA /* UIImage+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960574722369AE000DAB2DA /* UIImage+DropShadow.swift */; };
-		2960574C22369E9700DAB2DA /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960574B22369E9700DAB2DA /* RadioPlayer.swift */; };
+		2960574C22369E9700DAB2DA /* RadioStreamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960574B22369E9700DAB2DA /* RadioStreamer.swift */; };
 		2960574E2236A6DA00DAB2DA /* RadioListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960574D2236A6DA00DAB2DA /* RadioListCell.swift */; };
 		296057512236B1AF00DAB2DA /* RadioPlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296057502236B1AF00DAB2DA /* RadioPlayVC.swift */; };
 		29FAEB92223683DC008375CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FAEB91223683DC008375CC /* AppDelegate.swift */; };
@@ -103,7 +103,7 @@
 		2960574322369ABF00DAB2DA /* AnimationFrames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFrames.swift; sourceTree = "<group>"; };
 		2960574522369ACD00DAB2DA /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
 		2960574722369AE000DAB2DA /* UIImage+DropShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+DropShadow.swift"; sourceTree = "<group>"; };
-		2960574B22369E9700DAB2DA /* RadioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayer.swift; sourceTree = "<group>"; };
+		2960574B22369E9700DAB2DA /* RadioStreamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStreamer.swift; sourceTree = "<group>"; };
 		2960574D2236A6DA00DAB2DA /* RadioListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioListCell.swift; sourceTree = "<group>"; };
 		296057502236B1AF00DAB2DA /* RadioPlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayVC.swift; sourceTree = "<group>"; };
 		29FAEB8E223683DC008375CC /* RadioTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,7 +241,7 @@
 		2960574922369C8300DAB2DA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				2960574B22369E9700DAB2DA /* RadioPlayer.swift */,
+				2960574B22369E9700DAB2DA /* RadioStreamer.swift */,
 				2960574A22369E8500DAB2DA /* UI-Helper */,
 			);
 			path = Helpers;
@@ -403,7 +403,7 @@
 				2960572C2236995900DAB2DA /* AsyncButton.swift in Sources */,
 				2960572A2236995900DAB2DA /* DesignableView.swift in Sources */,
 				2960572B2236995900DAB2DA /* DesignableTabBarController.swift in Sources */,
-				2960574C22369E9700DAB2DA /* RadioPlayer.swift in Sources */,
+				2960574C22369E9700DAB2DA /* RadioStreamer.swift in Sources */,
 				2960571D2236995900DAB2DA /* ImageLoader.swift in Sources */,
 				2960571E2236995900DAB2DA /* Spring.swift in Sources */,
 				296056F22236875500DAB2DA /* Track.swift in Sources */,

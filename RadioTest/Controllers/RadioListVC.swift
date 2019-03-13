@@ -19,7 +19,7 @@ class RadioListVC: UIViewController {
     
     weak var radioPlayVC: RadioPlayVC?
 
-    let radioPlayer = RadioPlayer()
+    let radioPlayer = RadioStreamer()
 
     // MARK: - List
     
@@ -49,11 +49,8 @@ class RadioListVC: UIViewController {
 
         // I'm Here...
         self.tableView.tableFooterView = UIView()
-        
-        // Setup Player
         radioPlayer.delegate = self
         
-        // Load Data
         loadListFromJSON()
         
         // Setup TableView
@@ -61,14 +58,9 @@ class RadioListVC: UIViewController {
         tableView.backgroundView = nil
         tableView.separatorStyle = .none
         
-        // Setup Pull to Refresh
-        setupPullToRefresh()
-        
-        // Create NowPlaying Animation
-        createNowPlayingAnimation()
-        
-        // Activate audioSession
 
+        setupPullToRefresh()
+        createNowPlayingAnimation()
 
         do {
             try AVAudioSession.sharedInstance().setActive(true)
@@ -76,15 +68,11 @@ class RadioListVC: UIViewController {
             if kDebugLog { print("audioSession could not be activated") }
         }
         
-        // Setup Search Bar
         setupSearchController()
-        
-        // Setup Remote Command Center
         setupRemoteCommandCenter()
-        
-        // Setup Handoff User Activity
         setupHandoffUserActivity()
     }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -114,7 +102,7 @@ class RadioListVC: UIViewController {
             guard let infoVC = segue.destination as? InfoVC else { return }
             infoVC.customBlurEffectStyle = .dark
             infoVC.customAnimationDuration = TimeInterval(0.5)
-            infoVC.customInitialScaleAmmount = CGFloat(Double(0.7)) // https://www.youtube.com/watch?v=TH_JRjJtNSw
+            infoVC.customInitialScaleAmmount = CGFloat(Double(0.7))
         
         }
     }
@@ -125,15 +113,13 @@ class RadioListVC: UIViewController {
         DispatchQueue.main.async {
             self.tableView.reloadData()
             guard let currentStation = self.radioPlayer.station else { return }
-            
-            // Reset everything if the new stations list doesn't have the current station
             if self.stations.index(of: currentStation) == nil { self.resetCurrentList() }
         }
     }
     
     private func resetCurrentList() {
         radioPlayer.resetRadioPlayer()
-//        nowPlayingAnimationImageView.stopAnimating()
+        nowPlayingAnimationImageView.stopAnimating()
         stationNowPlayingButton.setTitle("Choose a station above to begin", for: .normal)
         stationNowPlayingButton.isEnabled = false
         navigationItem.rightBarButtonItem = nil
@@ -198,10 +184,7 @@ class RadioListVC: UIViewController {
     }
     
     @objc func refresh(sender: AnyObject) {
-        // Pull to Refresh
         loadListFromJSON()
-        
-        // Wait 2 seconds then refresh screen
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.refreshControl.endRefreshing()
             self.view.setNeedsDisplay()
@@ -212,13 +195,8 @@ class RadioListVC: UIViewController {
     
     func loadListFromJSON() {
         
-        // Turn on network indicator in status bar
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        
-        // Get the Radio Stations
         DataManager.getStationDataWithSuccess() { (data) in
-            
-            // Turn off network indicator in status bar
             defer {
                 DispatchQueue.main.async { UIApplication.shared.isNetworkActivityIndicatorVisible = false }
             }
@@ -237,25 +215,20 @@ class RadioListVC: UIViewController {
     // MARK: - Remote Command Center Controls
     
     func setupRemoteCommandCenter() {
-        // Get the shared MPRemoteCommandCenter
         let commandCenter = MPRemoteCommandCenter.shared()
         
-        // Add handler for Play Command
         commandCenter.playCommand.addTarget { event in
             return .success
         }
         
-        // Add handler for Pause Command
         commandCenter.pauseCommand.addTarget { event in
             return .success
         }
         
-        // Add handler for Next Command
         commandCenter.nextTrackCommand.addTarget { event in
             return .success
         }
         
-        // Add handler for Previous Command
         commandCenter.previousTrackCommand.addTarget { event in
             return .success
         }
@@ -265,7 +238,6 @@ class RadioListVC: UIViewController {
     
     func updateLockScreen(with track: Track?) {
         
-        // Define Now Playing Info
         var nowPlayingInfo = [String : Any]()
         
         if let image = track?.artworkImage {
@@ -282,13 +254,12 @@ class RadioListVC: UIViewController {
             nowPlayingInfo[MPMediaItemPropertyTitle] = title
         }
         
-        // Set the metadata
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
 
 }
 
-// MARK: - Handoff Functionality - GH
+// MARK: - Functionality
 
 extension RadioListVC {
     
@@ -446,11 +417,9 @@ extension RadioListVC: NowPlayingViewControllerDelegate {
     
     func handleRemoteStationChange() {
         if let nowPlayingVC = radioPlayVC {
-            // If nowPlayingVC is presented
             nowPlayingVC.load(station: radioPlayer.station, track: radioPlayer.track)
             nowPlayingVC.stationDidChange()
         } else if let station = radioPlayer.station {
-            // If nowPlayingVC is not presented (change from remote controls)
             radioPlayer.player.radioURL = URL(string: station.streamURL)
         }
     }
