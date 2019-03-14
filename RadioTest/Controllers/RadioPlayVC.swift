@@ -103,7 +103,7 @@ class RadioPlayVC: UIViewController {
     }
     
     @IBAction func shareButtonPressed(_ sender: UIButton) {
-        let songToShare = "I'm listening to \(currentTrack.title) on \(currentRadio.name) via Swift Radio Pro"
+        let songToShare = "I'm listening to \(currentTrack.title) on \(currentRadio.name) via RadioTest Application, you can check or download complete source code in https://github.com/AmirDaliri/RadioApp"
         let activityViewController = UIActivityViewController(activityItems: [songToShare, currentTrack.artworkImage!], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceRect = CGRect(x: view.center.x, y: view.center.y, width: 0, height: 0)
         activityViewController.popoverPresentationController?.sourceView = view
