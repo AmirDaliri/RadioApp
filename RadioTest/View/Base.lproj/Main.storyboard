@@ -237,6 +237,9 @@
                                                         <real key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="twitterBttn:" destination="6bY-8j-0ip" eventType="touchUpInside" id="3Kc-HH-ayQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPO-FQ-MHG" customClass="SpringButton" customModule="RadioTest" customModuleProvider="target">
                                                 <rect key="frame" x="64" y="0.0" width="32" height="32"/>
@@ -251,6 +254,9 @@
                                                         <real key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="linkedinBttn:" destination="6bY-8j-0ip" eventType="touchUpInside" id="di5-H5-sxu"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lel-Dh-GfA" customClass="SpringButton" customModule="RadioTest" customModuleProvider="target">
                                                 <rect key="frame" x="120" y="0.0" width="32" height="32"/>
@@ -265,6 +271,9 @@
                                                         <real key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="mailBttn:" destination="6bY-8j-0ip" eventType="touchUpInside" id="MtE-1Q-JaS"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZI5-N8-88O" customClass="SpringButton" customModule="RadioTest" customModuleProvider="target">
                                                 <rect key="frame" x="176" y="0.0" width="32" height="32"/>
@@ -279,6 +288,9 @@
                                                         <real key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="githubBttn:" destination="6bY-8j-0ip" eventType="touchUpInside" id="IW7-uW-d7s"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
